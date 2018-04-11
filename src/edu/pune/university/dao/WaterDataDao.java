@@ -28,6 +28,7 @@ public class WaterDataDao extends _BaseDao{
 	
 	public void createWaterData (WaterData waterData) throws ApplicationException {
 		insertDocument(getMongoCollection(), waterData);
+		MongoDatabaseConnectionManager.getInstance().closeDatabaseConnection();
 	}
 	
 	public void createWaterData (List<WaterData> waterDatas) throws ApplicationException {
