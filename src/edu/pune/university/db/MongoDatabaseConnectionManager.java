@@ -15,10 +15,10 @@ import com.mongodb.client.MongoDatabase;
 public class MongoDatabaseConnectionManager {
 	
 	private static MongoDatabaseConnectionManager instance = null;
-	private static String USER = "champion";
-	private static String PASSWORD = "khushi";
-	private static String HOST = "ds159767.mlab.com";
-	private static String PORT_NUMBER = "59767";
+	private static String USER = "Maya";
+	private static String PASSWORD = "root";
+	private static String HOST = "ds241699.mlab.com";
+	private static String PORT_NUMBER = "41699";
 	private static String DATABASE_NAME = "water";
 	private static MongoClient client = null;
 	private static MongoDatabase mongoDatabase = null;

@@ -13,7 +13,7 @@ import edu.pune.university.exception.ApplicationException;
 
 public class WaterDataDao extends _BaseDao{
 	
-	private static String COLLECTION = "water_data";
+	private static String COLLECTION = "Water_Data";
 	
 	
 	private MongoCollection<Document> getMongoCollection() throws ApplicationException {
