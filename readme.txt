@@ -1,0 +1,1 @@
+Use application url as http://localhost:8080/WaterMonitoringSystem/
