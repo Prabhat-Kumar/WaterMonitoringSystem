@@ -20,13 +20,13 @@ public class WaterDataDaoTest extends TestCase {
 
 	public void testCreateWaterDataTest() {
 		WaterData waterData = new WaterData();
-		waterData.setId("1");
-		waterData.setTemperature(39.5F);
+		waterData.setId("4");
+		waterData.setTemperature(41.0F);
 		try {
 			waterDataDao.createWaterData(waterData);
 		} catch (ApplicationException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.printStackTrace(); 
 		}
 	}
 
