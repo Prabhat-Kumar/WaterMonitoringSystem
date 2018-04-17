@@ -1,11 +1,14 @@
 package edu.pune.university.dao;
 
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bson.Document;
 
+import com.google.gson.Gson;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 
 import edu.pune.university.data.WaterData;
 import edu.pune.university.db.MongoDatabaseConnectionManager;
@@ -43,8 +46,18 @@ public class WaterDataDao extends _BaseDao{
 		
 	}
 	
-	public List<WaterData> getAllWaterData () {
-		return null;
+	public List<WaterData> getAllWaterData () throws ApplicationException {
+		List<WaterData> waterDatas = new ArrayList<>();
+		MongoCursor<Document> cursor = getMongoCollection().find(Document.class).iterator();
+		try {
+			while (cursor.hasNext()) {
+				WaterData waterData = (new Gson()).fromJson(cursor.next().toJson(), WaterData.class);
+				waterDatas.add(waterData);
+			}
+		} finally {
+			cursor.close();
+		}
+		return waterDatas;
 	}
 	
 	public WaterData findWaterData (String id) {

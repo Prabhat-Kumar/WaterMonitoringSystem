@@ -1,7 +1,7 @@
 package edu.pune.university.data;
 
 public class Record {
-
+	
 	private String time;
 	private int pH;
 	private float temprature;
@@ -34,5 +34,10 @@ public class Record {
 
 	public void setTemprature(float temprature) {
 		this.temprature = temprature;
+	}
+
+	@Override
+	public String toString() {
+		return "Record [time=" + time + ", pH=" + pH + ", temprature=" + temprature + "]";
 	}
 }
