@@ -4,7 +4,6 @@ import org.bson.Document;
 
 public class UserData extends Document{
 	private static final long serialVersionUID = 1L;
-
 	private String userName ="userName";
 	private String password ="password";
 	public String getUserName() {

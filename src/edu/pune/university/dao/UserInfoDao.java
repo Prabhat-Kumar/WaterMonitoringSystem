@@ -4,9 +4,7 @@ import java.net.UnknownHostException;
 import java.util.List;
 
 import org.bson.Document;
-
 import com.mongodb.client.MongoCollection;
-
 import edu.pune.university.data.UserData;
 import edu.pune.university.db.MongoDatabaseConnectionManager;
 import edu.pune.university.exception.ApplicationException;
