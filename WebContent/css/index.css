@@ -18,6 +18,11 @@ input[type=text], input[type=password] {
 #loginForm {
 
 	}
+	
+#map {
+	width: 100%;
+	height: 100%;
+}
 
 button {
     background-color: #4CAF50;

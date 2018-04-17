@@ -24,7 +24,8 @@ function showGoogleMap() {
 	      center: new google.maps.LatLng(18.60, 73.84),
 	      mapTypeId: google.maps.MapTypeId.ROADMAP
 	    });
-
+	    // By default position for map is 'relative' which makes it not visible on UI, so setting it to absolute.
+	    document.getElementById('map').style.position='absolute';
 	    var infowindow = new google.maps.InfoWindow();
 
 	    var marker, i;
@@ -42,4 +43,6 @@ function showGoogleMap() {
 	        }
 	      })(marker, i));
 	    }
+}
+function myMap() {
 }
