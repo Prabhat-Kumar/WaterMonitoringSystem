@@ -25,7 +25,7 @@ function loadGraph () {
 		data: {
 			labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
 			datasets: [{
-				label: 'My First dataset',
+				label: 'Temprature',
 				backgroundColor: window.chartColors.red,
 				borderColor: window.chartColors.red,
 				data: [
@@ -39,7 +39,7 @@ function loadGraph () {
 				],
 				fill: false,
 			}, {
-				label: 'My Second dataset',
+				label: 'PH',
 				fill: false,
 				backgroundColor: window.chartColors.blue,
 				borderColor: window.chartColors.blue,
@@ -58,7 +58,7 @@ function loadGraph () {
 			responsive: true,
 			title: {
 				display: true,
-				text: 'Chart.js Line Chart'
+				text: 'Temprature and PH v/s time chart'
 			},
 			tooltips: {
 				mode: 'index',
@@ -80,7 +80,7 @@ function loadGraph () {
 					display: true,
 					scaleLabel: {
 						display: true,
-						labelString: 'Value'
+						labelString: 'Temprature and PH'
 					}
 				}]
 			}
