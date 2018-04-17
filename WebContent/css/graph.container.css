@@ -1,0 +1,15 @@
+.graphClass .ui-dialog {
+	padding: 1px;
+	background-color: lime;
+}
+
+.graphClass .ui-dialog-titlebar {
+	padding: 0px !important;
+}
+
+.graphClass .ui-dialog-title {
+	padding: 10px;
+	color: white;
+	background-color: #3177c9;
+	font-weight: bold;
+}
