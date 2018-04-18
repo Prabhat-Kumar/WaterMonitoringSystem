@@ -14,44 +14,36 @@ function openGraph (titleText, graphData) {
 		});
 		$dialog.dialog("open");
 		$('.graphClass').css({'position': 'absolute', 'background-color': 'white', 'height': '100%', 'width': '100%', 'top': '0px', 'left': '0px'});
-		loadGraph ();
+		loadGraph (graphData);
 	});
 }
 
-function loadGraph () {
-	var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+function loadGraph (graphData) {
+	var xAxisLabels = [];
+	var tempratures = [];
+	var phs = [];
+	
+	for (i = 0; i < graphData.length; i++) {  
+		xAxisLabels[i] = graphData[i].time;
+		tempratures[i] = graphData[i].temprature;
+		phs[i] = graphData[i].pH;
+	}
 	var config = {
 		type: 'line',
 		data: {
-			labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+			labels: xAxisLabels,
 			datasets: [{
 				label: 'Temprature',
 				backgroundColor: window.chartColors.red,
 				borderColor: window.chartColors.red,
-				data: [
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor()
-				],
+				data: tempratures,
 				fill: false,
 			}, {
 				label: 'PH',
 				fill: false,
 				backgroundColor: window.chartColors.blue,
 				borderColor: window.chartColors.blue,
-				data: [
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor()
-				],
+				data: phs,
 			}]
 		},
 		options: {

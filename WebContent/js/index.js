@@ -13,37 +13,35 @@ $(document).ready(function(){
 });
 
 function showGoogleMap() {
-	var locations = [
-		  ['CTW Dighi Pimpri-Chinchwad, Maharashtra 411039',18.6123331, 73.85091160000002, 3],
-		  ['CME Lake, Upper Lake, Bopkhel, Pimpri-Chinchwad, Maharashtra 411034', 18.606424, 73.847845,  2],
-		  ['Upper Lake, Bopkhel, Pimpri-Chinchwad, Maharashtra', 18.603389, 73.841207, 1]
-		  ];
+	xhrGet("rest/water/datas", function(waterDatas) {
+		if (waterDatas) {
+			var map = new google.maps.Map(document.getElementById('map'), {
+			      zoom: 14,
+			      center: new google.maps.LatLng(18.60, 73.84),
+			      mapTypeId: google.maps.MapTypeId.ROADMAP
+			    });
+			    // By default position for map is 'relative' which makes it not visible on UI, so setting it to absolute.
+			    document.getElementById('map').style.position='absolute';
+			    var infowindow = new google.maps.InfoWindow();
 
-	    var map = new google.maps.Map(document.getElementById('map'), {
-	      zoom: 14,
-	      center: new google.maps.LatLng(18.60, 73.84),
-	      mapTypeId: google.maps.MapTypeId.ROADMAP
-	    });
-	    // By default position for map is 'relative' which makes it not visible on UI, so setting it to absolute.
-	    document.getElementById('map').style.position='absolute';
-	    var infowindow = new google.maps.InfoWindow();
+			    var marker, i;
 
-	    var marker, i;
+			    for (i = 0; i < waterDatas.length; i++) {  
+			      marker = new google.maps.Marker({
+			        position: new google.maps.LatLng(waterDatas[i].latitude, waterDatas[i].longitude),
+			        map: map
+			      });
 
-	    for (i = 0; i < locations.length; i++) {  
-	      marker = new google.maps.Marker({
-	        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-	        map: map
-	      });
-
-	      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-	        return function() {
-//	          infowindow.setContent(locations[i][0]);
-//	          infowindow.open(map, marker);
-	          openGraph (locations[i][0]);
-	        }
-	      })(marker, i));
-	    }
+			      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+			        return function() {
+			          openGraph (waterDatas[i].location, waterDatas[i].records);
+			        }
+			      })(marker, i));
+			    }
+		}
+	}, function(error, status) {
+		console.log("Staus" + status +" Error" +error );
+	});
 }
 function myMap() {
 }
