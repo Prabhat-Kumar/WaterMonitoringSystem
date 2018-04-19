@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.bson.Document;
 
+import com.google.gson.Gson;
+
 public class WaterData extends Document {
 
 	private static final long serialVersionUID = 1L;
@@ -21,29 +23,29 @@ public class WaterData extends Document {
 		this.append(this.location, location);
 	}
 
-	public float getLatitude() {
-		return (float) this.get(this.latitude);
+	public double getLatitude() {
+		return (double) this.get(this.latitude);
 	}
 
-	public void setLatitude(float latitude) {
+	public void setLatitude(double latitude) {
 		this.append(this.latitude, latitude);
 	}
 
-	public float getLongitude() {
-		return (float) this.get(this.longitude);
+	public double getLongitude() {
+		return (double) this.get(this.longitude);
 	}
 
-	public void setLongitude(float longitude) {
+	public void setLongitude(double longitude) {
 		this.append(this.longitude, longitude);
 	}
 
 	@SuppressWarnings("unchecked")
 	public List<Record> getRecords() {
-		return (List<Record>) this.get(this.records);
+		return (new Gson()).fromJson(this.get(this.records).toString(), List.class);
 	}
 
 	public void setRecords(List<Record> records) {
-		this.append(this.records, records);
+		this.append(this.records, (new Gson()).toJson(records));
 	}
 	
 	
