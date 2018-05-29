@@ -8,19 +8,19 @@ public class UserData extends Document {
 	private String password = "password";
 
 	public String getUserName() {
-		return userName;
+		return (String) this.get(this.userName);
 	}
 
 	public void setUserName(String userName) {
-		this.userName = userName;
+		this.append(this.userName, userName);
 	}
 
 	public String getPassword() {
-		return password;
+		return (String) this.get(this.password);
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
+		this.append(this.password, password);
 	}
 
 }

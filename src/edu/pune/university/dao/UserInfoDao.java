@@ -1,10 +1,15 @@
 package edu.pune.university.dao;
 
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bson.Document;
+
+import com.google.gson.Gson;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
+
 import edu.pune.university.data.UserData;
 import edu.pune.university.db.MongoDatabaseConnectionManager;
 import edu.pune.university.exception.ApplicationException;
@@ -21,32 +26,18 @@ private static String COLLECTION = "User_Info";
 		}
 	}
 
-	
-	
-	public void createWaterData (UserData userData) throws ApplicationException {
-		insertDocument(getMongoCollection(), userData);
-		MongoDatabaseConnectionManager.getInstance().closeDatabaseConnection();
+	public List<UserData> getAllUserData () throws ApplicationException {
+		List<UserData> userDatas = new ArrayList<>();
+		MongoCursor<Document> cursor = getMongoCollection().find(Document.class).iterator();
+		try {
+			while (cursor.hasNext()) {
+				UserData UserData = (new Gson()).fromJson(cursor.next().toJson(), UserData.class);
+				userDatas.add(UserData);
+			}
+		} finally {
+			cursor.close();
+		}
+		return userDatas;
 	}
-	
-	public void createWaterData (List<UserData> userDatas) throws ApplicationException {
-		insertDocument(getMongoCollection(), userDatas);
-	}
-	
-	public void updateUserData (UserData userData) {
-		
-	}
-	
-	public void deleteUserData (UserData userData) {
-		
-	}
-	
-	public List<UserData> getAllUserData () {
-		return null;
-	}
-	
-	public UserData findUserData (String id) {
-		return null;
-	}
-
 
 }
