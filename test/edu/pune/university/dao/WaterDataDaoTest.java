@@ -25,29 +25,32 @@ public class WaterDataDaoTest extends TestCase {
 
 	public void testCreateWaterDataTest() {
 		WaterData waterData = new WaterData();
-		waterData.setLocation("CTW Dighi Pimpri-Chinchwad, Maharashtra 411039");
-		waterData.setLatitude(18.6123331F);
-		waterData.setLongitude(73.85091160000002F);
+		waterData.setLocation("Panshet Dam , Maharastra");
+		waterData.setLatitude(18.377934);
+		waterData.setLongitude(73.613514);
 		
 		List<Record> records = new ArrayList<Record>();
 		
-		Record record1 = new Record("01-March-2017", 8, 25.0F);
+		Record record1 = new Record("01-September-2017", 8, 32.40F);
 		records.add(record1);
 		
-		record1 = new Record("01-April-2017", 9, 25.0F);
+		record1 = new Record("01-October-2017", 8, 29.80F);
 		records.add(record1);
 		
-		record1 = new Record("01-May-2017", 8, 25.0F);
+		
+		record1 = new Record("01-November-2017", 7, 27.80F);
 		records.add(record1);
 		
-		record1 = new Record("01-June-2017", 8, 25.0F);
+		record1 = new Record("01-December-2017", 7, 19.90F);
 		records.add(record1);
 		
-		record1 = new Record("01-July-2017", 8, 25.0F);
+		record1 = new Record("01-January-2018",6, 20.30F);
 		records.add(record1);
 		
-		record1 = new Record("01-August-2017", 8, 25.0F);
+		record1 = new Record("01-Febuary-2018", 7, 22.20F);
 		records.add(record1);
+
+		
 		
 		waterData.setRecords(records);
 		
