@@ -3,6 +3,7 @@ package edu.pune.university.data;
 import org.bson.Document;
 
 public class WaterDemoData extends Document{
+	
 	private static final long serialVersionUID = 1L;
 
 	private String time;

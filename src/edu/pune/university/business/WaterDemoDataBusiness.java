@@ -22,7 +22,6 @@ import edu.pune.university.exception.ApplicationException;
  */
 
 public class WaterDemoDataBusiness {
-	
 
 	/**
 	 * Instance variable declaration for {@link WaterDataDao}.

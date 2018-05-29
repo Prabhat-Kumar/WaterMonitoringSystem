@@ -13,9 +13,6 @@ public class WaterDemoDataTO {
 	private double temp;
 	private double pH;
 	
-	
-	
-
 	/**
 	 * @return the time
 	 */

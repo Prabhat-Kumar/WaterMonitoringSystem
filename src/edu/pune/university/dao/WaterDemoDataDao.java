@@ -17,7 +17,7 @@ import edu.pune.university.exception.ApplicationException;
 
 public class WaterDemoDataDao extends _BaseDao {
 	
-private static String COLLECTION = "Water_Demo";
+	private static String COLLECTION = "Water_Demo";
 	
 	
 	private MongoCollection<Document> getMongoCollection() throws ApplicationException {

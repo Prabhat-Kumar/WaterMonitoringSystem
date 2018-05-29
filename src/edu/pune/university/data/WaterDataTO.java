@@ -9,6 +9,7 @@ import java.util.List;
  * 
  * @author <a href="mailto:mayap282@gmail.com">Maya Pilania</a>
  */
+
 public class WaterDataTO {
 
 	private String location;
