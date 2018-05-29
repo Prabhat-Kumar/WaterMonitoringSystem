@@ -1,15 +1,19 @@
 $(document).ready(function(){
+	$("#message").hide();
+	$("#demo").hide();
     $("#loginSubmit").click(function(event){
     	var postData = {userName : $('#userName').val(), password : $('#password').val()};
     	xhrPost("rest/user/authenticate", postData,  function(result) {
     		if (result) {
 				$('#loginForm').hide();
+				$("#message").hide();
+				$("#demo").show();
 				showGoogleMap();
 			}else{
-				$('#username').hide();
-				$('#password').hide();
+				$('#userName').val("");
+				$('#password').val("");
+				$("#message").show();
 				$("#message").css("color", "red");
-				
 			}
     	}, function(error, status) {
     		console.log("Staus" + status +" Error" +error );
@@ -17,7 +21,9 @@ $(document).ready(function(){
     });
     
     $("#demo").click(function(event){
-    	openGraphDemo("Live Demo from temprature and PH");
+    	xhrGet("rest/waterDemo/datas", function(waterDatas) {
+    		openGraphDemo("Live Demo from temprature and PH", waterDatas);
+    	});
     });
 });
 

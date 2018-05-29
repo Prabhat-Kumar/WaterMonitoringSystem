@@ -4,8 +4,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="css/graph.container.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="js/util.js"></script>
 	<script type="text/javascript" src="js/graph.dialog.js"></script>
@@ -27,9 +27,6 @@
 
     <label for="psw"><b>Password</b></label>
     <input type="password" id="password" placeholder="Enter Password" name="psw" required>
-     <div id="message">
-  		<h3>Enter Valid username/password</h3>
-	</div>   
     <button id="loginSubmit" type="submit">Login</button>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -41,8 +38,9 @@
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </div>
+<div id="message"><h3>Enter Valid username/password</h3></div>
+<button id="demo"> Demo From Live Data</button>
 <div id="map"></div>
 <div id="graphDialogBox"></div>
-<div id="demo"> Demo From Live Data</div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-function openGraphDemo (titleText) {
+function openGraphDemo (titleText, waterDatas) {
 	var $dialog = $("#graphDialogBox").dialog({
 		title: titleText,
 		autoOpen: false,
@@ -14,15 +14,17 @@ function openGraphDemo (titleText) {
 		});
 		$dialog.dialog("open");
 		$('.graphClass').css({'position': 'absolute', 'background-color': 'white', 'height': '100%', 'width': '100%', 'top': '0px', 'left': '0px'});
+		loadDemoGraph (waterDatas);
 		setInterval(function (){
-			xhrGet("rest/waterDemo/datas", function(waterDatas) {
-				loadGraph (waterDatas);
+			xhrGet("rest/waterDemo/datas", function(data) {
+				waterDatas = data;
+				loadDemoGraph (waterDatas);
 	    	});
 		}, 20000);
 	});
 }
 
-function loadGraph (graphData) {
+function loadDemoGraph (graphData) {
 	var xAxisLabels = [];
 	var tempratures = [];
 	var phs = [];
