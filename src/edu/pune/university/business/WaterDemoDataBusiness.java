@@ -5,11 +5,11 @@ import java.util.List;
 
 import edu.pune.university.dao.WaterDataDao;
 import edu.pune.university.dao.WaterDemoDataDao;
-import edu.pune.university.data.WaterData;
 import edu.pune.university.data.WaterDataTO;
 import edu.pune.university.data.WaterDemoData;
 import edu.pune.university.data.WaterDemoDataTO;
 import edu.pune.university.exception.ApplicationException;
+import edu.pune.university.service.rest.WaterDataService;
 
 /**
  * WaterDataBusiness class is responsible for holding the business logic for

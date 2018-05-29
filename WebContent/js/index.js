@@ -15,6 +15,10 @@ $(document).ready(function(){
     		console.log("Staus" + status +" Error" +error );
     	});
     });
+    
+    $("#demo").click(function(event){
+    	openGraphDemo("Live Demo from temprature and PH");
+    });
 });
 
 function showGoogleMap() {
