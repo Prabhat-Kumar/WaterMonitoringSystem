@@ -1,187 +1,50 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- WARNING: Eclipse auto-generated file.
-              Any modifications will be overwritten.
-              To include a user specific buildfile here, simply create one in the same
-              directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="WaterMonitoringSystem">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project basedir="." default="build" name="WaterMonitoringSystem">
     <property environment="env"/>
-    <property name="ECLIPSE_HOME" value="../../../../Personal/Maya/STS-3.9.3/"/>
-    <property name="junit.output.dir" value="junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.8"/>
-    <property name="source" value="1.8"/>
-    <path id="Apache Tomcat v9.0 [Apache Tomcat v9.0].libraryclasspath">
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/annotations-api.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/catalina-ant.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/catalina-ha.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/catalina-storeconfig.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/catalina-tribes.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/catalina.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/ecj-4.6.3.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/el-api.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/jasper-el.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/jasper.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/jaspic-api.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/jsp-api.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/servlet-api.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/tomcat-api.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/tomcat-coyote.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/tomcat-dbcp.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/tomcat-i18n-es.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/tomcat-i18n-fr.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/tomcat-i18n-ja.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/tomcat-jdbc.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/tomcat-jni.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/tomcat-util-scan.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/tomcat-util.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/tomcat-websocket.jar"/>
-        <pathelement location="../../../../Personal/Maya/apache-tomcat-9.0.6/lib/websocket-api.jar"/>
-    </path>
-    <path id="Web App Libraries.libraryclasspath">
-        <pathelement location="WebContent/WEB-INF/lib/aopalliance-repackaged-2.5.0-b42.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/cdi-api-1.1.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/el-api-2.2.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/gson-2.2.4.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/hk2-api-2.5.0-b42.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/hk2-locator-2.5.0-b42.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/hk2-utils-2.5.0-b42.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/javassist-3.22.0-CR2.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/javax.annotation-api-1.2.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/javax.inject-1.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/javax.inject-2.5.0-b42.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/javax.json-1.1.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/javax.json-api-1.1.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/javax.json.bind-api-1.0.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/javax.servlet-api-3.0.1.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/javax.ws.rs-api-2.1.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/jaxb-api-2.2.7.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/jersey-client.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/jersey-common.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/jersey-container-servlet-core.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/jersey-container-servlet.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/jersey-hk2.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/jersey-media-jaxb.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/jersey-media-json-binding.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/jersey-media-sse.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/jersey-server.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/jsr250-api-1.0.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/mongo-java-driver-3.6.3.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/org.osgi.core-4.2.0.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/osgi-resource-locator-1.0.1.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/persistence-api-1.0.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/validation-api-1.1.0.Final.jar"/>
-        <pathelement location="WebContent/WEB-INF/lib/yasson-1.0.jar"/>
-    </path>
-    <path id="EAR Libraries.libraryclasspath"/>
-    <path id="WaterMonitoringSystem.classpath">
-        <pathelement location="build/classes"/>
-        <path refid="Apache Tomcat v9.0 [Apache Tomcat v9.0].libraryclasspath"/>
-        <path refid="Web App Libraries.libraryclasspath"/>
-        <path refid="EAR Libraries.libraryclasspath"/>
-        <pathelement location="libs/junit-4.12.jar"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+	<condition property="ARCHIVE_DIR" value="${env.ARCHIVE_DIR}" else=".">
+	        <isset property="env.ARCHIVE_DIR" />
+	</condition>
+	<property name="warname" value="WaterMonitoringSystem.war"/>
+    <path id="classpathDir">
+        <pathelement location="bin"/>
+    	<pathelement location="WebContent/WEB-INF/lib/*.jar"/> 
+	<fileset dir="WebContent/WEB-INF/lib"> 
+        	<include name="*.jar"/> 
+    </fileset>
     </path>
     <target name="init">
-        <mkdir dir="build/classes"/>
-        <copy includeemptydirs="false" todir="build/classes">
-            <fileset dir="src">
-                <exclude name="**/*.ucls"/>
-                <exclude name="**/*.java"/>
-            </fileset>
-        </copy>
-        <copy includeemptydirs="false" todir="build/classes">
-            <fileset dir="test">
-                <exclude name="**/*.ucls"/>
-                <exclude name="**/*.java"/>
-            </fileset>
-        </copy>
+        <mkdir dir="bin"/>
     </target>
     <target name="clean">
-        <delete dir="build/classes"/>
+        <delete dir="bin"/>
+    	<delete file="${ARCHIVE_DIR}/${warname}" />
     </target>
-    <target depends="clean" name="cleanall"/>
-    <target depends="build-subprojects,build-project" name="build"/>
-    <target name="build-subprojects"/>
-    <target depends="init" name="build-project">
+    <target name="build" depends="build-project,build-war"/>
+    <target name="cleanall" depends="clean"/>
+    <target name="build-project" depends="clean,init">
+    	<copy todir="${ARCHIVE_DIR}">
+    		<fileset file="manifest.yml" />
+    	</copy>    	
         <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}">
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}"
+		includeantruntime="false">
             <src path="src"/>
-            <src path="test"/>
-            <classpath refid="WaterMonitoringSystem.classpath"/>
+            <classpath refid="classpathDir"/>
         </javac>
     </target>
-    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
-    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
-        <copy todir="${ant.library.dir}">
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </copy>
-        <unzip dest="${ant.library.dir}">
-            <patternset includes="jdtCompilerAdapter.jar"/>
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </unzip>
-    </target>
-    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
-        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
-        <antcall target="build"/>
-    </target>
-    <target name="MongoDatabaseConnectionManager">
-        <java classname="edu.pune.university.db.MongoDatabaseConnectionManager" failonerror="true" fork="yes">
-            <classpath refid="WaterMonitoringSystem.classpath"/>
-        </java>
-    </target>
-    <target name="UserInfoDaoTest">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="edu.pune.university.dao.UserInfoDaoTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="WaterMonitoringSystem.classpath"/>
-        </junit>
-    </target>
-    <target name="WaterDataDaoTest">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="edu.pune.university.dao.WaterDataDaoTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="WaterMonitoringSystem.classpath"/>
-        </junit>
-    </target>
-    <target name="WaterDataDaoTest.testGetAllWaterData">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="edu.pune.university.dao.WaterDataDaoTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="WaterMonitoringSystem.classpath"/>
-        </junit>
-    </target>
-    <target name="WaterDemoDataTest">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="edu.pune.university.dao.WaterDemoDataTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="WaterMonitoringSystem.classpath"/>
-        </junit>
-    </target>
-    <target name="WaterMonitoringSystem (1)">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="edu.pune.university.dao.UserInfoDaoTest" todir="${junit.output.dir}"/>
-            <test name="edu.pune.university.dao.WaterDataDaoTest" todir="${junit.output.dir}"/>
-            <test name="edu.pune.university.dao.WaterDemoDataTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="WaterMonitoringSystem.classpath"/>
-        </junit>
-    </target>
-    <target name="junitreport">
-        <junitreport todir="${junit.output.dir}">
-            <fileset dir="${junit.output.dir}">
-                <include name="TEST-*.xml"/>
-            </fileset>
-            <report format="frames" todir="${junit.output.dir}"/>
-        </junitreport>
-    </target>
+ 
+   <target name="build-war" depends="build-project">
+	  <war destfile="${ARCHIVE_DIR}/${warname}" webxml="WebContent/WEB-INF/web.xml">
+	  	<classes dir="bin"/>
+	  	<fileset dir="WebContent">
+	  		<include name="**/*"/>
+	  		<exclude name="**/*.class"/>
+	  	</fileset>
+	  </war>
+   </target>
+
 </project>
