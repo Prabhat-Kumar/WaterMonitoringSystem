@@ -9,3 +9,4 @@ https://jersey.github.io/download.html
 
 Using ChartJs for showing graphical representation of data. More details can be found at
 http://www.chartjs.org/
+Demo 
